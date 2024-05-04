@@ -25,7 +25,7 @@
                 :to="item.to"
                 :class="[
                   item.current ? 'bg-zinc-900 text-white' : 'text-zinc-300 hover:bg-zinc-700 hover:text-white',
-                  'rounded-md px-3 py-2 text-sm font-medium',
+                  'rounded-md px-3 py-2 text-sm font-medium cursor-pointer',
                 ]"
                 :aria-current="item.current ? 'page' : undefined"
                 @click="goTo(item.to)"
@@ -47,7 +47,7 @@
             :to="item.to"
             :class="[
               item.current ? 'bg-zinc-900 text-white' : 'text-zinc-300 hover:bg-zinc-700 hover:text-white',
-              'block rounded-md px-3 py-2 text-base font-medium',
+              'block rounded-md px-3 py-2 text-base font-medium cursor-pointer',
             ]"
             :aria-current="item.current ? 'page' : undefined"
             >{{ item.name }}</DisclosureButton
@@ -66,12 +66,11 @@ const route = useRoute();
 const navigation = [
   { name: 'About', to: 'about', current: true },
   { name: 'Work', to: 'work', current: false },
-  // { name: 'Resume', to: 'resume', current: false },
-  // { name: 'Contact', to: 'contact', current: false },
+  { name: 'Resume', to: 'resume', current: false },
+  { name: 'Contact', to: 'contact', current: false },
 ];
 
 const goTo = (routePath) => {
-  console.log(routePath);
   if (route.path !== routePath) {
     navigateTo(routePath);
     setActiveAndOpen(navigation);

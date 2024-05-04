@@ -2,7 +2,7 @@
   <DefaultLayoutVue>
     <main>
       <!-- Header section -->
-      <div class="mx-auto max-w-7xl px-6 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40 align-middle">
+      <div class="mx-auto max-w-7xl px-6 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40 py-16 align-middle">
         <div id="headerContent" class="px-6 lg:px-8">
           <div class="mx-auto max-w-2xl text-center sm:pt-20">
             <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Freelance Full-stack Developer</h2>

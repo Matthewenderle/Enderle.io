@@ -6,18 +6,20 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
+    "preview": "pnpm run build-only && wrangler dev",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "deploy": "pnpm run build-only && wrangler deploy"
   },
   "dependencies": {
     "vue": "^3.5.27"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.28.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/vite": "^4.2.1",
     "@tsconfig/node24": "^24.0.4",
@@ -37,7 +39,8 @@
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.5",
-    "vue-tsc": "^3.2.4"
+    "vue-tsc": "^3.2.4",
+    "wrangler": "^4.73.0"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
